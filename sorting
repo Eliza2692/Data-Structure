@@ -1,0 +1,107 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+Created on Mon Dec  2 14:00:52 2019
+
+@author: elizabethalarcon
+"""
+
+"""-----------------BUBBLE------------------"""   
+ 
+def bubbleSort(arr):
+    
+    for i in range(len(arr)):
+        
+        for j in range(len(arr)-1):
+            
+            if arr[j]>arr[j+1]:
+                
+                arr[j],arr[j+1]=arr[j+1],arr[j]
+                
+    return arr
+
+
+"""-----------------SELECTION------------------"""
+
+def selectionSort(arr):
+    
+    for i in range(len(arr)-1):        
+
+        minimo = arr[i]
+        x=i
+        for j in range(i,len(arr)):
+            
+            if arr[j]<minimo:
+                x=j
+                minimo=arr[j]
+        
+        arr[i],arr[x]=arr[x],arr[i]
+                
+    return arr   
+
+"""-----------------INSERTION------------------"""
+
+def insertionSort(arr):
+    
+    for i in range(1,len(arr)):        
+
+        for j in range(0,i,-1):
+            
+            if arr[i]<arr[j]:
+                arr.insert(arr.pop(j))
+                break
+                
+    return arr  
+
+"""-------------------MERGE--------------------"""
+
+'''def mergeSort(arr):
+    
+    if len(arr)>1:
+    
+        half = int(len(arr)/2)
+        left = arr[:half]
+        right = arr[half:]
+    
+        mergeSort(left)
+        mergeSort(right)
+    
+        i,j,k=0,0,0
+        arr=[]
+        while i < len(left) and j < len(right):
+            if left[i] < right[j]:
+                arr[k]=left[i]
+                i=i+1
+            else:
+                arr[k]=right[j]
+                j=j+1
+                k=k+1
+                    
+        while i < len(left):
+            arr[k]=left[i]
+            i=i+1
+            k=k+1
+
+        while j < len(right):
+            arr[k]=right[j]
+            j=j+1
+            k=k+1
+                
+    return arr  '''
+
+"""-----------------TEST------------------"""
+
+numbers = [99, 44, 6, 2, 1, 5, 63, 87, 283, 4, 0]
+
+print (numbers)
+print ('---------------- BUBBLE----------------')
+print(bubbleSort(numbers))
+print ('---------------SELECTION---------------')
+print(selectionSort(numbers))
+print ('---------------INSERTION---------------')
+print(insertionSort(numbers))
+'''print ('-----------------MERGE-----------------')
+print(mergeSort(numbers))'''
+            
+            
+        
